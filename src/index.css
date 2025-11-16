@@ -5,3 +5,20 @@ body {
 #root {
   height: 100%;
 }
+
+.animeOfComents {
+  animation: RowScroll 25s linear infinite;
+}
+
+@keyframes RowScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animeReverse {
+  animation-direction: alternate-reverse;
+}

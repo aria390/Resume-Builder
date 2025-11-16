@@ -4,6 +4,7 @@ import Header from "../Components/Header";
 import LandOfSite from "../Components/LandOfSite";
 import BuildResume from "../Components/BuildResume";
 import Testimonials from "../Components/Testimonials";
+import GetStarrter from "../Components/GetStarrter";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <LandOfSite />
       <BuildResume />
       <Testimonials />
+      <GetStarrter/>
     </div>
   );
 };
