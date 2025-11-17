@@ -20,7 +20,7 @@ const BuildResume = () => {
         </div>
         <div className="flex flex-col gap-3">
           <div className="group">
-            <div className="flex gap-2 p-6 group-hover:bg-violet-100 border border-transparent group-hover:border-violet-300 rounded-xl transition-colors border-violet-300 bg-violet-100 cursor-pointer ">
+            <div className="flex gap-2 p-6 group-hover:bg-violet-100 border border-transparent group-hover:border-violet-300 rounded-xl transition-colors cursor-pointer ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -58,17 +58,17 @@ const BuildResume = () => {
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                className="size-6 stroke-violet-600"
+                className="size-6 stroke-green-600"
               >
-                <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"></path>
-                <circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"></path>
               </svg>
               <div>
                 <h3 className="text-base font-semibold text-slate-700">
-                  Real-Time Analytics
+                  Bank-Grade Security
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xs">
-                  Get instant insights into your finances with live dashboards.
+                  End-to-end encryption, 2FA, compliance with GDPR standards.
                 </p>
               </div>
             </div>
@@ -76,6 +76,7 @@ const BuildResume = () => {
           <div className="group">
             <div className="flex gap-2 p-6 group-hover:bg-orange-100 border border-transparent group-hover:border-orange-300 rounded-xl transition-colors cursor-pointer ">
               <svg
+                className="size-6 stroke-orange-600"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -85,17 +86,18 @@ const BuildResume = () => {
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                className="size-6 stroke-violet-600"
               >
-                <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"></path>
-                <circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                <path d="M12 15V3"></path>
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <path d="m7 10 5 5 5-5"></path>
               </svg>
               <div>
                 <h3 className="text-base font-semibold text-slate-700">
-                  Real-Time Analytics
+                  Customizable Reports
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xs">
-                  Get instant insights into your finances with live dashboards.
+                  Export professional, audit-ready financial reports for tax or
+                  internal review.
                 </p>
               </div>
             </div>
