@@ -1,16 +1,51 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import axios from "../Api/axios";
+import { useMutation } from "@tanstack/react-query";
+
+interface IuserType {
+  name: string;
+  email: string;
+  password: string;
+}
 
 const Register = () => {
   const changePage = useNavigate();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+  });
+  const { mutate, isSuccess } = useMutation({
+    mutationFn: async (user: IuserType) => {
+      const { data } = await axios.post("/api/users/register", {
+        name: user.name,
+        email: user.email,
+        password: user.password,
+      });
+      return data;
+    },
+  });
+
+  if (isSuccess) {
+    changePage("/Login");
+  }
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center bg-gray-50 h-screen">
         <form
           className="bg-white w-90 py-10 px-8 justify-center items-center flex flex-col gap-4 border border-gray-300 rounded-xl"
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
+          onSubmit={handleSubmit(({ name, email, password }) => {
+            mutate({ name: name, email: email, password: password });
+          })}
         >
           <div className="flex flex-col justify-center items-center gap-2">
             <p className="text-gray-900 text-3xl font-medium">sing up</p>
@@ -39,6 +74,7 @@ const Register = () => {
               placeholder="Name"
               className="border-none w-full outline-none primaryTest pr-8"
               type="text"
+              {...register("name", { required: true })}
             />
           </div>
           <div className="flex items-center w-full bg-white border border-gray-300/80 h-12 rounded-full pl-6 gap-2">
@@ -62,6 +98,7 @@ const Register = () => {
               placeholder="Email id "
               className="border-none w-full outline-none primaryTest pr-8"
               type="email"
+              {...register("email", { required: true })}
             />
           </div>
           <div className="flex items-center w-full bg-white border border-gray-300/80 h-12 rounded-full pl-6 gap-2">
@@ -85,8 +122,11 @@ const Register = () => {
               placeholder="Password"
               className="border-none w-full outline-none primaryTest pr-8"
               type="password"
+              {...register("password", { required: true })}
             />
           </div>
+          {errors.name && <p className="text-red-600">Error</p>}
+
           <p className="text-green-500 text-[12px] self-start cursor-pointer">
             Forget password?
           </p>
@@ -94,7 +134,7 @@ const Register = () => {
             type="submit"
             className="cursor-pointer w-full h-11 rounded-full text-white bg-green-500 hover:opacity-90 transition-opacity"
           >
-            Login
+            SingUp
           </button>
           <p className="text-gray-500 text-[12px]">
             Don't have an account?

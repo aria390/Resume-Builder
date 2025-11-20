@@ -11,10 +11,14 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
+    "@tanstack/react-query": "^5.90.10",
+    "axios": "^1.13.2",
+    "axois": "^0.0.1-security",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-hook-form": "^7.66.0",
     "react-router": "^7.9.5",
     "tailwindcss": "^4.1.17",
     "zustand": "^5.0.8"

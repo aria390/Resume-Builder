@@ -1,16 +1,71 @@
-import React from "react";
+import { useMutation } from "@tanstack/react-query";
+import axios from "../Api/axios";
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+
+interface IinputType {
+  email: string;
+  password: string;
+}
+
+interface IResponseType {
+  massage: string;
+  token: string;
+  user: {
+    createdAt: string;
+    email: string;
+    name: string;
+    updatedAt: string;
+    __v: string;
+    _id: string;
+  };
+}
 
 const Login = () => {
   const changePage = useNavigate();
+  const { register, handleSubmit } = useForm<IinputType>({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+  const { mutate, isSuccess, data } = useMutation<
+    IResponseType,
+    Error,
+    IinputType
+  >({
+    mutationFn: async (userData: IinputType) => {
+      const { data } = await axios.post("/api/users/login", {
+        email: userData.email,
+        password: userData.password,
+      });
+
+      return data;
+    },
+  });
+
+  useEffect(() => {
+    if (isSuccess) {
+      localStorage.setItem("token", data.token);
+      changePage("/Dashboard");
+    }
+  }, [isSuccess]);
+
+  useEffect(() => {
+    if (localStorage.getItem("token") !== null) {
+      changePage("/Dashboard");
+    }
+  }, []);
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center bg-gray-50 h-screen">
         <form
+          onSubmit={handleSubmit((data: IinputType) => {
+            mutate(data);
+          })}
           className="bg-white w-90 py-10 px-8 justify-center items-center flex flex-col gap-4 border border-gray-300 rounded-xl"
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
         >
           <div className="flex flex-col justify-center items-center gap-2">
             <p className="text-gray-900 text-3xl font-medium">Login</p>
@@ -40,6 +95,7 @@ const Login = () => {
               placeholder="Email id "
               className="border-none w-full outline-none primaryTest pr-8"
               type="email"
+              {...register("email", { required: true })}
             />
           </div>
           <div className="flex items-center w-full bg-white border border-gray-300/80 h-12 rounded-full pl-6 gap-2">
@@ -63,6 +119,7 @@ const Login = () => {
               placeholder="Password"
               className="border-none w-full outline-none primaryTest pr-8"
               type="password"
+              {...register("password", { required: true })}
             />
           </div>
           <p className="text-green-500 text-[12px] self-start cursor-pointer">
