@@ -10,19 +10,31 @@ const Header = () => {
       <img className="h-11 w-auto" src={logoSite} alt="" />
       <ul className="flex gap-7 *:text-sm *:cursor-pointer *:hover:text-green-600 *:transition">
         <li>Home</li>
-        <li>Featuerd</li>
-        <li>Testimonials</li>
-        <li>Contact</li>
+        <li>
+          <a href="#feacher">Featuerd</a>
+        </li>
+        <li>
+          <a href="#anime">Testimonials</a>
+        </li>
+        <li>
+          <a href="#footer">Contact</a>
+        </li>
       </ul>
       <div className="flex gap-3">
-        <button onClick={()=>{
-          changePage("/Register")
-        }} className="bg-green-500 hover:bg-green-700 py-2 px-6 text-white rounded-full active:scale-95 transition-all cursor-pointer ">
+        <button
+          onClick={() => {
+            changePage("/Register");
+          }}
+          className="bg-green-500 hover:bg-green-700 py-2 px-6 text-white rounded-full active:scale-95 transition-all cursor-pointer "
+        >
           Get started
         </button>
-        <button onClick={()=>{
-          changePage("/Login")
-        }} className="py-2 px-6 rounded-full active:scale-95 transition-all border cursor-pointer">
+        <button
+          onClick={() => {
+            changePage("/Login");
+          }}
+          className="py-2 px-6 rounded-full active:scale-95 transition-all border cursor-pointer"
+        >
           Login
         </button>
       </div>

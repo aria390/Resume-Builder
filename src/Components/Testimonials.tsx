@@ -4,7 +4,7 @@ import Erfan from "../img/erfan.jpg";
 
 const Testimonials = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <div id="anime" className="flex flex-col gap-2">
       <div className="flex flex-col items-center text-center gap-2 pb-5">
         <div className="flex items-center justify-center w-40 text-sm text-green-600 bg-green-400/10 rounded-full px-6 py-1.5">
           <span>Testimonials</span>

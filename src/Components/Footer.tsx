@@ -3,7 +3,7 @@ import logo from "../img/logo.svg";
 
 const Footer = () => {
   return (
-    <div className="flex flex-wrap justify-center  overflow-hidden gap-10  py-16 px-6   text-[13px] text-gray-500 bg-linear-to-r from-white via-green-200/60 to-white mt-40">
+    <div id="footer" className="flex flex-wrap justify-center  overflow-hidden gap-10  py-16 px-6   text-[13px] text-gray-500 bg-linear-to-r from-white via-green-200/60 to-white mt-40">
       <div className="flex flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
         <img className="h-11 w-auto" src={logo} alt="" />
         <div>

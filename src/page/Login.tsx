@@ -24,7 +24,7 @@ interface IResponseType {
 
 const Login = () => {
   const changePage = useNavigate();
-  const { register, handleSubmit } = useForm<IinputType>({
+  const { register, handleSubmit } = useForm<IinputType>({ 
     defaultValues: {
       email: "",
       password: "",

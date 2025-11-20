@@ -3,7 +3,7 @@ import Group_image from "../img/group-image-1.png";
 
 const BuildResume = () => {
   return (
-    <div className="pt-50">
+    <div id="feacher" className="pt-50">
       <div className="flex flex-col items-center text-center gap-2">
         <div className="flex items-center justify-center w-40 text-sm text-green-600 bg-green-400/10 rounded-full px-6 py-1.5">
           <span>Simple Process</span>

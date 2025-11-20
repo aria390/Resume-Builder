@@ -43,8 +43,8 @@ const Register = () => {
       <div className="flex flex-col justify-center items-center bg-gray-50 h-screen">
         <form
           className="bg-white w-90 py-10 px-8 justify-center items-center flex flex-col gap-4 border border-gray-300 rounded-xl"
-          onSubmit={handleSubmit(({ name, email, password }) => {
-            mutate({ name: name, email: email, password: password });
+          onSubmit={handleSubmit((data) => {
+            mutate(data);
           })}
         >
           <div className="flex flex-col justify-center items-center gap-2">
