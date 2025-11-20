@@ -35,7 +35,7 @@ const Register = () => {
   });
 
   if (isSuccess) {
-    changePage("/Login");
+    changePage("/Dashboard");
   }
 
   return (
