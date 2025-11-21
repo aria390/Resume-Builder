@@ -2,9 +2,10 @@ import Header_Dashboard from "../Components/Header_Dashboard";
 
 const Dashboard = () => {
   return (
-  <Header_Dashboard />
-
-  )
+    <section>
+      <Header_Dashboard />
+    </section>
+  );
 };
 
 export default Dashboard;

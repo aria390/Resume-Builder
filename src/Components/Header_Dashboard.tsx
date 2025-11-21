@@ -40,15 +40,15 @@ const Header_Dashboard = () => {
   });
 
   return (
-    <div className="flex flex-col">
-      <div className="flex justify-between items-center py-4 px-20">
+    <div className="flex flex-col shadow">
+      <div className="flex justify-between items-center py-4 px-20 text-slate-800 transition-all">
         <img src={logo} alt="" />
         <div className="flex gap-4 items-center">
           <p>Hi {data?.user.name}</p>
           <button
             onClick={() => {
               localStorage.removeItem("token");
-              changePage("/Home");
+              changePage("/");
             }}
             className="px-6 py-2 rounded-full border border-gray-400 cursor-pointer"
           >
@@ -60,4 +60,4 @@ const Header_Dashboard = () => {
   );
 };
 
-export default Header_Dashboard
+export default Header_Dashboard;

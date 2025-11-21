@@ -61,9 +61,9 @@ const Register = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="#6B7280"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-user-round"
               aria-hidden="true"
             >
