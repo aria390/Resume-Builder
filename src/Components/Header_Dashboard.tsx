@@ -41,10 +41,10 @@ const Header_Dashboard = () => {
 
   return (
     <div className="flex flex-col shadow">
-      <div className="flex justify-between items-center py-4 px-20 text-slate-800 transition-all">
+      <div className="flex justify-between items-center py-4 px-36 text-slate-800 transition-all">
         <img src={logo} alt="" />
         <div className="flex gap-4 items-center">
-          <p>Hi {data?.user.name}</p>
+          <p>Hi, {data?.user.name}</p>
           <button
             onClick={() => {
               localStorage.removeItem("token");

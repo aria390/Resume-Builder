@@ -8,6 +8,7 @@ import Login from "./page/Login";
 import Register from "./page/Register";
 import Dashboard from "./page/Dashboard";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Builder from "./page/Builder";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/Dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "/Builder",
+    element: <Builder />,
   },
 ]);
 
