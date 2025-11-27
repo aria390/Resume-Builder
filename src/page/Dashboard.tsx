@@ -7,7 +7,6 @@ const Dashboard = () => {
     <section>
       <Header_Dashboard />
       <Create_Resume />
-      <Modal/>
     </section>
   );
 };
